@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -9,9 +10,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class ContactComponent {
 
+   usrs={
+    name:"",
+    email:"",
+    contact:""
+  }
+  contactForm = new FormGroup({
+    name: new FormControl('',Validators.required),
+    email: new FormControl(''),
+    phone: new FormControl('')
+  });
   fromSubmit(val:any)
   {
-console.log(val.controls);
+  this.usrs.name=val.name
+  this.usrs.email=val.email
+  this.usrs.contact=val.phone
+  console.log(this.usrs);
   }
 
 }
