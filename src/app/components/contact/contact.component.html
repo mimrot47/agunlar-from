@@ -1,0 +1,20 @@
+<div class="container">
+    <form #contactForm="ngForm" (ngSubmit)="fromSubmit(contactForm)">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" id="name" #validator="ngModel" placeholder="Enter Your Name" ngModel required>
+            <span class="error" *ngIf="validator.invalid && validator.touched">Please Enter Your Name </span>
+        </div>
+        <div class="form-group ">
+            <label for="email">Email</label>
+            <input type="email " name="email" class="form-control " id="email " #validatorEmail="ngModel" placeholder="Enter Your Email " ngModel required>
+            <span class="error" *ngIf="validatorEmail.invalid && validatorEmail.touched">Please Enter Your Email Address </span>
+        </div>
+        <div class="form-group">
+            <label for="contact">Phone Number</label>
+            <input type="number" name="phone" minlength="10" maxlength="12" class="form-control" id="number" #validatorPhone="ngModel" placeholder="Enter Name Phone Number" ngModel required>
+            <span class="error" *ngIf="validatorPhone.invalid && validatorPhone.touched">Please Enter Your Phone Number </span>
+        </div>
+        <button type="submit " [disabled]="contactForm.invalid" class="btn btn-primary ">Submit</button>
+    </form>
+</div>
