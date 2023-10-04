@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators, FormBuilder,  } from '@angular/forms';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 
 
@@ -15,17 +16,24 @@ export class ContactComponent {
     email:"",
     contact:""
   }
-  contactForm = new FormGroup({
-    name: new FormControl('',Validators.required),
-    email: new FormControl(''),
-    phone: new FormControl('')
+  contactForm:FormGroup;
+
+  constructor(private fb:FormBuilder, private userDataService:UserDataService){
+  this.contactForm = fb.group({
+    name:[,Validators.required],
+    email: [,],
+    phone: []
   });
-  fromSubmit(val:any)
+  this.userDataService.getUserData().subscribe(res=>{
+    console.log(res);
+  });
+}
+  fromSubmit()
   {
-  this.usrs.name=val.name
-  this.usrs.email=val.email
-  this.usrs.contact=val.phone
-  console.log(this.usrs);
+  var name=this.contactForm.get('name');
+  var email=this.contactForm.get('email');
+  var contact=this.contactForm.get('contact');
+  console.log(name?.value);
   }
 
 }

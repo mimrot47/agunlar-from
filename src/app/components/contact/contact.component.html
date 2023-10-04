@@ -1,18 +1,20 @@
 <div class="container">
-    <form [formGroup]="contactForm" (ngSubmit)="fromSubmit(contactForm.value )">
-        <div class="form-group">
-            <label for="fromConrolName">Name</label>
-            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter Your Name" required>
+    <app-agent1></app-agent1>
+    <app-agent2></app-agent2>
+    <!-- <form [formGroup]="contactForm">
+        <div class="form-group ">
+            <label for="fromConrolName ">Name</label>
+            <input type="text " formControlName="name" class="form-control " id="name " placeholder="Enter Your Name " required>
         </div>
         <div class="form-group ">
-            <label for="email">Email</label>
-            <input type="email " fromConrolName="email" class="form-control " id="email " placeholder="Enter Your Email " required>
+            <label for="email ">Email</label>
+            <input type="email " formControlName="email" class="form-control " id="email " placeholder="Enter Your Email " required>
         </div>
-        <div class="form-group">
-            <label for="contact">Phone Number</label>
-            <input type="number" fromConrolNamen="phone" minlength="10" maxlength="12" class="form-control" id="number" placeholder="Enter Name Phone Number" required>
+        <div class="form-group ">
+            <label for="contact ">Phone Number</label>
+            <input type="number " formControlName="phone" minlength="10 " maxlength="12 " class="form-control " id="number " placeholder="Enter Name Phone Number " required>
         </div>
-        <button type="submit " class="btn btn-primary ">Submit</button>
-        <button type="button" class="btn btn-success">Reset</button>
-    </form>
+        <button type="button " (click)="fromSubmit()" class="btn btn-primary ">Submit</button>
+        <button type="button " class="btn btn-success ">Reset</button>
+    </form> -->
 </div>
