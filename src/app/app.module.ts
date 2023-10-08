@@ -10,6 +10,7 @@ import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import { Agent1Component } from './components/agent1/agent1.component';
 import { Agent2Component } from './components/agent2/agent2.component';
 import { HttpClientModule } from '@angular/common/http';
+ 
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
